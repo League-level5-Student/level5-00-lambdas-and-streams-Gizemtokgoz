@@ -3,6 +3,7 @@ package _03_Sorting_With_Streams;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -26,7 +27,7 @@ public class StreamSorter {
     }
 
     List<String> sortList(List<String> list) {
-    	return List.stream(list).collect(Collectors.toList());
+    	return list.stream().sorted().collect(Collectors.toList());
     }
     
     // =================== DO NOT MODIFY THE CODE BELOW ======================
