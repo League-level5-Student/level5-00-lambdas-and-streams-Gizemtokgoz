@@ -63,7 +63,9 @@ public class Minesweeper extends PApplet {
      * *Note* This can be done using a for loop, but try to do it with Streams.
      */
     void revealAllCells() {
-        
+        for (Cell cm : cells) {
+			cells.stream().forEach(cm.revealed);
+		}
     }
     
     /*
@@ -76,7 +78,7 @@ public class Minesweeper extends PApplet {
      *  noneMatch() // returns true if no items in the stream match the condition
      */
     boolean checkWin() {
-        return false;
+        cells.stream(cells).filter();
     }
     
     /*
