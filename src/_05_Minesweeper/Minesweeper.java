@@ -76,7 +76,7 @@ public class Minesweeper extends PApplet {
      *  noneMatch() // returns true if no items in the stream match the condition
      */
     boolean checkWin() {
-        cells.stream().forEach(cell -> cells);
+        cells.stream().forEach(cell -> cells.);
     }
     
     /*
