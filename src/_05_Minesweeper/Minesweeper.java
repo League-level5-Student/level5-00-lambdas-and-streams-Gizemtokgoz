@@ -76,7 +76,12 @@ public class Minesweeper extends PApplet {
      *  noneMatch() // returns true if no items in the stream match the condition
      */
     boolean checkWin() {
-        cells.stream().forEach(cell -> cells.);
+        long minesRevealed = cells.stream().filter(cells -> cells.revealed == true).count();
+        if (minesRevealed == cells.size()) {
+        	return true;
+        } else {
+        	return false;
+        }
     }
     
     /*
@@ -96,7 +101,14 @@ public class Minesweeper extends PApplet {
      *        - - - -
      */
     void revealCell(Cell cell) {
-        cells.stream().forEach(cell.minesAround == 0 -> getNeighbors(cell).stream().forEach(cells -> cells.revealed = true));
+    	cells.stream().forEach(cells -> cell.mine != true);
+    	if (cell.minesAround == 0) {
+    		List<Cell> neCells;
+    		neCells = getNeighbors(cell);
+    		neCells.stream().forEach(cells -> cells.revealed = true);
+    		revealCell(cell);
+    	}
+        //cells.stream().forEach(cell.minesAround == 0 -> getNeighbors(cell).stream().forEach(cells -> cells.revealed = true));
     }
     
     /*
